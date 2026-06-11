@@ -1,0 +1,78 @@
+{
+    "sw-faq": {
+        "general": {
+            "mainMenuItemGeneral": "FAQ-beheer",
+            "descriptionText": "Beheer veelgestelde vragen en categorieën"
+        },
+        "list": {
+            "title": "FAQ's",
+            "tabFaqs": "FAQ's",
+            "tabCategories": "Categorieën",
+            "buttonAddFaq": "FAQ toevoegen",
+            "searchPlaceholder": "Zoek FAQ's...",
+            "columnQuestion": "Vraag",
+            "columnAnswer": "Antwoord",
+            "columnCategory": "Categorie",
+            "columnActive": "Actief",
+            "actionEdit": "Bewerken",
+            "actionDelete": "Verwijderen",
+            "emptyStateTitle": "Geen FAQ's gevonden",
+            "emptyStateSubline": "Maak je eerste FAQ aan om te beginnen",
+            "modalDeleteTitle": "FAQ verwijderen",
+            "modalDeleteText": "Weet je zeker dat je deze FAQ wilt verwijderen?",
+            "buttonCancel": "Annuleren",
+            "buttonDelete": "Verwijderen",
+            "notificationDeleteSuccess": "FAQ is succesvol verwijderd",
+            "notificationDeleteError": "Er is een fout opgetreden bij het verwijderen van de FAQ",
+            "textFaqOverview": "FAQ's"
+        },
+        "detail": {
+            "titleNew": "Nieuwe FAQ",
+            "textHeadline": "FAQ",
+            "cardTitleFaqInfo": "FAQ-informatie",
+            "buttonCancel": "Annuleren",
+            "buttonSave": "Opslaan",
+            "labelQuestion": "Vraag",
+            "placeholderQuestion": "Voer de vraag in",
+            "labelAnswer": "Antwoord",
+            "placeholderAnswer": "Voer het antwoord in",
+            "labelCategory": "Categorie",
+            "placeholderCategory": "Selecteer een categorie",
+            "labelActive": "Actief",
+            "notificationSaveSuccess": "FAQ is succesvol opgeslagen",
+            "notificationSaveError": "Er is een fout opgetreden bij het opslaan van de FAQ",
+            "notificationLoadError": "Er is een fout opgetreden bij het laden van de FAQ"
+        },
+        "category": {
+            "list": {
+                "title": "FAQ-categorieën",
+                "textCategoryOverview": "Categorieën",
+                "buttonAddCategory": "Categorie toevoegen",
+                "searchPlaceholder": "Zoek categorieën...",
+                "columnName": "Naam",
+                "actionEdit": "Bewerken",
+                "actionDelete": "Verwijderen",
+                "emptyStateTitle": "Geen categorieën gevonden",
+                "emptyStateSubline": "Maak je eerste categorie aan om te beginnen",
+                "modalDeleteTitle": "Categorie verwijderen",
+                "modalDeleteText": "Weet je zeker dat je deze categorie wilt verwijderen?",
+                "buttonCancel": "Annuleren",
+                "buttonDelete": "Verwijderen",
+                "notificationDeleteSuccess": "Categorie is succesvol verwijderd",
+                "notificationDeleteError": "Er is een fout opgetreden bij het verwijderen van de categorie"
+            },
+            "detail": {
+                "titleNew": "Nieuwe categorie",
+                "textHeadline": "Categorie",
+                "cardTitleCategoryInfo": "Categorie-informatie",
+                "buttonCancel": "Annuleren",
+                "buttonSave": "Opslaan",
+                "labelName": "Naam",
+                "placeholderName": "Voer de categorienaam in",
+                "notificationSaveSuccess": "Categorie is succesvol opgeslagen",
+                "notificationSaveError": "Er is een fout opgetreden bij het opslaan van de categorie",
+                "notificationLoadError": "Er is een fout opgetreden bij het laden van de categorie"
+            }
+        }
+    }
+}

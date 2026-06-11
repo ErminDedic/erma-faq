@@ -1,0 +1,12 @@
+{
+    "faq": {
+        "listing": {
+            "search": {
+                "heading": "Was ist Ihre Frage?",
+                "placeholder": "Suchen..."
+            },
+            "categories": "Themen",
+            "uncategorized": "Nicht kategorisiert"
+        }
+    }
+}

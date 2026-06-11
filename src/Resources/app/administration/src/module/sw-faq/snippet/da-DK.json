@@ -1,0 +1,78 @@
+{
+    "sw-faq": {
+        "general": {
+            "mainMenuItemGeneral": "FAQ-administration",
+            "descriptionText": "Administrer ofte stillede spørgsmål og kategorier"
+        },
+        "list": {
+            "title": "FAQ'er",
+            "tabFaqs": "FAQ'er",
+            "tabCategories": "Kategorier",
+            "buttonAddFaq": "Tilføj FAQ",
+            "searchPlaceholder": "Søg i FAQ'er...",
+            "columnQuestion": "Spørgsmål",
+            "columnAnswer": "Svar",
+            "columnCategory": "Kategori",
+            "columnActive": "Aktiv",
+            "actionEdit": "Rediger",
+            "actionDelete": "Slet",
+            "emptyStateTitle": "Ingen FAQ'er fundet",
+            "emptyStateSubline": "Opret din første FAQ for at komme i gang",
+            "modalDeleteTitle": "Slet FAQ",
+            "modalDeleteText": "Er du sikker på, at du vil slette denne FAQ?",
+            "buttonCancel": "Annuller",
+            "buttonDelete": "Slet",
+            "notificationDeleteSuccess": "FAQ'en er blevet slettet",
+            "notificationDeleteError": "Der opstod en fejl under sletning af FAQ'en",
+            "textFaqOverview": "FAQ'er"
+        },
+        "detail": {
+            "titleNew": "Ny FAQ",
+            "textHeadline": "FAQ",
+            "cardTitleFaqInfo": "FAQ-oplysninger",
+            "buttonCancel": "Annuller",
+            "buttonSave": "Gem",
+            "labelQuestion": "Spørgsmål",
+            "placeholderQuestion": "Indtast spørgsmålet",
+            "labelAnswer": "Svar",
+            "placeholderAnswer": "Indtast svaret",
+            "labelCategory": "Kategori",
+            "placeholderCategory": "Vælg en kategori",
+            "labelActive": "Aktiv",
+            "notificationSaveSuccess": "FAQ'en er blevet gemt",
+            "notificationSaveError": "Der opstod en fejl under gemning af FAQ'en",
+            "notificationLoadError": "Der opstod en fejl under indlæsning af FAQ'en"
+        },
+        "category": {
+            "list": {
+                "title": "FAQ-kategorier",
+                "textCategoryOverview": "Kategorier",
+                "buttonAddCategory": "Tilføj kategori",
+                "searchPlaceholder": "Søg i kategorier...",
+                "columnName": "Navn",
+                "actionEdit": "Rediger",
+                "actionDelete": "Slet",
+                "emptyStateTitle": "Ingen kategorier fundet",
+                "emptyStateSubline": "Opret din første kategori for at komme i gang",
+                "modalDeleteTitle": "Slet kategori",
+                "modalDeleteText": "Er du sikker på, at du vil slette denne kategori?",
+                "buttonCancel": "Annuller",
+                "buttonDelete": "Slet",
+                "notificationDeleteSuccess": "Kategorien er blevet slettet",
+                "notificationDeleteError": "Der opstod en fejl under sletning af kategorien"
+            },
+            "detail": {
+                "titleNew": "Ny kategori",
+                "textHeadline": "Kategori",
+                "cardTitleCategoryInfo": "Kategorioplysninger",
+                "buttonCancel": "Annuller",
+                "buttonSave": "Gem",
+                "labelName": "Navn",
+                "placeholderName": "Indtast kategorinavnet",
+                "notificationSaveSuccess": "Kategorien er blevet gemt",
+                "notificationSaveError": "Der opstod en fejl under gemning af kategorien",
+                "notificationLoadError": "Der opstod en fejl under indlæsning af kategorien"
+            }
+        }
+    }
+}

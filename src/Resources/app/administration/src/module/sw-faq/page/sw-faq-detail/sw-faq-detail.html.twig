@@ -1,0 +1,111 @@
+{% block sw_faq_detail %}
+    <sw-page class="sw-faq-detail">
+        {% block sw_faq_detail_header %}
+            <template #smart-bar-header>
+                <h2>{{ placeholder(faq, 'question', $tc('sw-faq.detail.textHeadline')) }}</h2>
+            </template>
+        {% endblock %}
+
+        {% block sw_faq_detail_actions %}
+            <template #smart-bar-actions>
+                <mt-button
+                    v-tooltip.bottom="tooltipCancel"
+                    :disabled="faqIsLoading"
+                    variant="secondary"
+                    size="default"
+                    @click="onCancel"
+                >
+                    {{ $tc('global.default.cancel') }}
+                </mt-button>
+                <sw-button-process
+                    v-model:process-success="isSaveSuccessful"
+                    v-tooltip.bottom="tooltipSave"
+                    class="sw-faq-detail__save-action"
+                    :is-loading="isLoading"
+                    :disabled="isLoading"
+                    variant="primary"
+                    @click.prevent="onSave"
+                >
+                    {{ $tc('sw-faq.detail.buttonSave') }}
+                </sw-button-process>
+            </template>
+        {% endblock %}
+
+        {% block sw_faq_detail_language_switch %}
+            <template #language-switch>
+                <sw-language-switch
+                    :disabled="isCreate(faqId) || isCreate($route.params.id)"
+                    :save-changes-function="saveOnLanguageChange"
+                    :abort-change-function="abortOnLanguageChange"
+                    @on-change="onChangeLanguage"
+                />
+            </template>
+        {% endblock %}
+
+        {% block sw_faq_detail_content %}
+            <template #content>
+                <sw-card-view>
+                    <template v-if="faqIsLoading">
+                        <sw-skeleton variant="detail-bold" />
+                        <sw-skeleton />
+                    </template>
+
+                    <template v-else>
+                        {% block sw_faq_detail_content_language_info %}
+                            <sw-language-info
+                                :entity-description="placeholder(faq, 'question', $tc('sw-faq.detail.textHeadline'))"
+                            />
+                        {% endblock %}
+
+                        {% block sw_faq_detail_base_info_card %}
+                            <mt-card
+                                position-identifier="sw-faq-detail-base-info"
+                                :title="$tc('sw-faq.detail.cardTitleFaqInfo')"
+                            >
+                                {% block sw_faq_detail_base_info_field_question %}
+                                    <mt-text-field
+                                        v-model="faq.question"
+                                        :label="$tc('sw-faq.detail.labelQuestion')"
+                                        :placeholder="placeholder(faq, 'question', $tc('sw-faq.detail.placeholderQuestion'))"
+                                        name="question"
+                                        validation="required"
+                                        required
+                                        :error="faqQuestionError"
+                                    />
+                                {% endblock %}
+
+                                {% block sw_faq_detail_base_info_field_answer %}
+                                    <mt-textarea
+                                        v-model="faq.answer"
+                                        :label="$tc('sw-faq.detail.labelAnswer')"
+                                        :placeholder="placeholder(faq, 'answer', $tc('sw-faq.detail.placeholderAnswer'))"
+                                        name="answer"
+                                        validation="required"
+                                        required
+                                        :error="faqAnswerError"
+                                    />
+                                {% endblock %}
+
+                                {% block sw_faq_detail_base_info_field_category %}
+                                    <mt-select
+                                        v-model="faq.faqCategoryId"
+                                        :label="$tc('sw-faq.detail.labelCategory')"
+                                        :options="faqCategoryOptions"
+                                        :placeholder="$tc('sw-faq.detail.placeholderCategory')"
+                                    />
+                                {% endblock %}
+
+                                {% block sw_faq_detail_base_info_field_active %}
+                                    <mt-switch
+                                        v-model="faq.active"
+                                        :label="$tc('sw-faq.detail.labelActive')"
+                                    />
+                                {% endblock %}
+                            </mt-card>
+                        {% endblock %}
+                    </template>
+                </sw-card-view>
+            </template>
+        {% endblock %}
+    </sw-page>
+{% endblock %}

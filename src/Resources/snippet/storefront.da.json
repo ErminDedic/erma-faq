@@ -1,0 +1,12 @@
+{
+    "faq": {
+        "listing": {
+            "search": {
+                "heading": "Hvad er dit spørgsmål?",
+                "placeholder": "Søg..."
+            },
+            "categories": "Emner",
+            "uncategorized": "Ukategoriseret"
+        }
+    }
+}

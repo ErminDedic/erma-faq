@@ -1,0 +1,60 @@
+{
+    "sw-cms": {
+        "blocks": {
+            "erma": {
+                "label": "Erma",
+                "faq": {
+                    "label": "FAQ"
+                },
+                "faqListing": {
+                    "label": "FAQ Listing"
+                }
+            }
+        },
+        "elements": {
+            "faq": {
+                "label": "FAQ",
+                "component": {
+                    "emptyState": "Select FAQs from the database or add manual entries in the settings panel. Nothing is shown on the storefront until you add at least one."
+                },
+                "config": {
+                    "label": {
+                        "titleSection": "Heading",
+                        "title": "FAQ heading",
+                        "faqs": "FAQs",
+                        "selectFaqs": "Select FAQs",
+                        "items": "Manual FAQ Items",
+                        "item": "FAQ Item",
+                        "question": "Question",
+                        "answer": "Answer",
+                        "addItem": "Add FAQ Item"
+                    },
+                    "placeholder": {
+                        "title": "Optional heading above the FAQ list",
+                        "selectFaqs": "Search and select FAQs...",
+                        "question": "Enter the question",
+                        "answer": "Enter the answer"
+                    }
+                }
+            },
+            "faqListing": {
+                "label": "FAQ Listing",
+                "placeholder": "This element displays all FAQs and categories from the database.",
+                "preview": "FAQ Listing - Shows all FAQs grouped by categories",
+                "config": {
+                    "label": {
+                        "info": "Information"
+                    },
+                    "description": "This element automatically displays all active FAQs from the database, grouped by their categories. No configuration is needed."
+                },
+                "search": {
+                    "heading": "What is your question?",
+                    "placeholder": "Search...",
+                    "noResults": "No FAQs found"
+                },
+                "categories": "Topics",
+                "uncategorized": "Uncategorized"
+            }
+        }
+    }
+}

@@ -1,0 +1,78 @@
+{
+    "sw-faq": {
+        "general": {
+            "mainMenuItemGeneral": "FAQ-Verwaltung",
+            "descriptionText": "Verwalten Sie häufig gestellte Fragen und Kategorien"
+        },
+        "list": {
+            "title": "FAQs",
+            "tabFaqs": "FAQs",
+            "tabCategories": "Kategorien",
+            "buttonAddFaq": "FAQ hinzufügen",
+            "searchPlaceholder": "FAQs suchen...",
+            "columnQuestion": "Frage",
+            "columnAnswer": "Antwort",
+            "columnCategory": "Kategorie",
+            "columnActive": "Aktiv",
+            "actionEdit": "Bearbeiten",
+            "actionDelete": "Löschen",
+            "emptyStateTitle": "Keine FAQs gefunden",
+            "emptyStateSubline": "Erstellen Sie Ihre erste FAQ, um zu beginnen",
+            "modalDeleteTitle": "FAQ löschen",
+            "modalDeleteText": "Möchten Sie diese FAQ wirklich löschen?",
+            "buttonCancel": "Abbrechen",
+            "buttonDelete": "Löschen",
+            "notificationDeleteSuccess": "FAQ wurde erfolgreich gelöscht",
+            "notificationDeleteError": "Beim Löschen der FAQ ist ein Fehler aufgetreten",
+            "textFaqOverview": "FAQs"
+        },
+        "detail": {
+            "titleNew": "Neue FAQ",
+            "textHeadline": "FAQ",
+            "cardTitleFaqInfo": "FAQ-Informationen",
+            "buttonCancel": "Abbrechen",
+            "buttonSave": "Speichern",
+            "labelQuestion": "Frage",
+            "placeholderQuestion": "Geben Sie die Frage ein",
+            "labelAnswer": "Antwort",
+            "placeholderAnswer": "Geben Sie die Antwort ein",
+            "labelCategory": "Kategorie",
+            "placeholderCategory": "Wählen Sie eine Kategorie",
+            "labelActive": "Aktiv",
+            "notificationSaveSuccess": "FAQ wurde erfolgreich gespeichert",
+            "notificationSaveError": "Beim Speichern der FAQ ist ein Fehler aufgetreten",
+            "notificationLoadError": "Beim Laden der FAQ ist ein Fehler aufgetreten"
+        },
+        "category": {
+            "list": {
+                "title": "FAQ-Kategorien",
+                "textCategoryOverview": "Kategorien",
+                "buttonAddCategory": "Kategorie hinzufügen",
+                "searchPlaceholder": "Kategorien suchen...",
+                "columnName": "Name",
+                "actionEdit": "Bearbeiten",
+                "actionDelete": "Löschen",
+                "emptyStateTitle": "Keine Kategorien gefunden",
+                "emptyStateSubline": "Erstellen Sie Ihre erste Kategorie, um zu beginnen",
+                "modalDeleteTitle": "Kategorie löschen",
+                "modalDeleteText": "Möchten Sie diese Kategorie wirklich löschen?",
+                "buttonCancel": "Abbrechen",
+                "buttonDelete": "Löschen",
+                "notificationDeleteSuccess": "Kategorie wurde erfolgreich gelöscht",
+                "notificationDeleteError": "Beim Löschen der Kategorie ist ein Fehler aufgetreten"
+            },
+            "detail": {
+                "titleNew": "Neue Kategorie",
+                "textHeadline": "Kategorie",
+                "cardTitleCategoryInfo": "Kategorie-Informationen",
+                "buttonCancel": "Abbrechen",
+                "buttonSave": "Speichern",
+                "labelName": "Name",
+                "placeholderName": "Geben Sie den Kategorienamen ein",
+                "notificationSaveSuccess": "Kategorie wurde erfolgreich gespeichert",
+                "notificationSaveError": "Beim Speichern der Kategorie ist ein Fehler aufgetreten",
+                "notificationLoadError": "Beim Laden der Kategorie ist ein Fehler aufgetreten"
+            }
+        }
+    }
+}

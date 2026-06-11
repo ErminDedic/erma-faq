@@ -1,0 +1,66 @@
+{% block element_faq %}
+    <div class="cms-element-{{ element.type }}">
+        {% if element.config.title.value %}
+            <h2>{{ element.config.title.value }}</h2>
+        {% endif %}
+        
+        {% set allFaqs = [] %}
+        
+        {# Add entity FAQs #}
+        {% if element.data.faqs %}
+            {% for faq in element.data.faqs %}
+                {% set allFaqs = allFaqs|merge([{
+                    question: faq.translated.question ?: faq.question ?: '',
+                    answer: faq.translated.answer ?: faq.answer ?: ''
+                }]) %}
+            {% endfor %}
+        {% endif %}
+        
+        {# Add manual FAQ items #}
+        {% if element.config.items.value %}
+            {% for item in element.config.items.value %}
+                {% set allFaqs = allFaqs|merge([{
+                    question: item.question ?: '',
+                    answer: item.answer ?: ''
+                }]) %}
+            {% endfor %}
+        {% endif %}
+        
+        {% if allFaqs|length > 0 %}
+            <div class="accordion faq-accordion" id="accordionFaq{{ element.id }}"{% if page.cmsPage.customFields.cms_page_dark_mode %} data-bs-theme="dark"{% endif %}>
+                {% for faq in allFaqs %}
+                    {% set itemId = 'faq-' ~ element.id ~ '-' ~ loop.index0 %}
+                    {% set headingId = 'heading' ~ itemId %}
+                    {% set collapseId = 'collapse' ~ itemId %}
+                    
+                    <div class="accordion-item faq-item">
+                        <h2 class="accordion-header faq-item-header" id="{{ headingId }}">
+                            <button 
+                                class="accordion-button faq-item-button{% if not loop.first %} collapsed{% endif %}" 
+                                type="button" 
+                                data-bs-toggle="collapse" 
+                                data-bs-target="#{{ collapseId }}" 
+                                aria-expanded="{% if loop.first %}true{% else %}false{% endif %}" 
+                                aria-controls="{{ collapseId }}"
+                            >
+                                {{ faq.question }}
+                            </button>
+                        </h2>
+                        <div 
+                            id="{{ collapseId }}" 
+                            class="accordion-collapse collapse faq-item-collapse{% if loop.first %} show{% endif %}" 
+                            aria-labelledby="{{ headingId }}" 
+                            data-bs-parent="#accordionFaq{{ element.id }}"
+                        >
+                            <div class="accordion-body faq-item-body">
+                                {% if faq.answer %}
+                                    {{ faq.answer|raw }}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>                      
+{% endblock %}

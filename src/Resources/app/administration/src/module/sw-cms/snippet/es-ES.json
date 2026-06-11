@@ -1,0 +1,60 @@
+{
+    "sw-cms": {
+        "blocks": {
+            "erma": {
+                "label": "Erma",
+                "faq": {
+                    "label": "FAQ"
+                },
+                "faqListing": {
+                    "label": "Listado de FAQ"
+                }
+            }
+        },
+        "elements": {
+            "faq": {
+                "label": "FAQ",
+                "component": {
+                    "emptyState": "Selecciona FAQ de la base de datos o añade entradas manuales en el panel de configuración. No se muestra nada en la tienda hasta que añadas al menos una."
+                },
+                "config": {
+                    "label": {
+                        "titleSection": "Encabezado",
+                        "title": "Encabezado de FAQ",
+                        "faqs": "FAQ",
+                        "selectFaqs": "Seleccionar FAQ",
+                        "items": "Entradas de FAQ manuales",
+                        "item": "Entrada de FAQ",
+                        "question": "Pregunta",
+                        "answer": "Respuesta",
+                        "addItem": "Añadir entrada de FAQ"
+                    },
+                    "placeholder": {
+                        "title": "Encabezado opcional sobre la lista de FAQ",
+                        "selectFaqs": "Buscar y seleccionar FAQ...",
+                        "question": "Introduce la pregunta",
+                        "answer": "Introduce la respuesta"
+                    }
+                }
+            },
+            "faqListing": {
+                "label": "Listado de FAQ",
+                "placeholder": "Este elemento muestra todas las FAQ y categorías de la base de datos.",
+                "preview": "Listado de FAQ - Muestra todas las FAQ agrupadas por categorías",
+                "config": {
+                    "label": {
+                        "info": "Información"
+                    },
+                    "description": "Este elemento muestra automáticamente todas las FAQ activas de la base de datos, agrupadas por sus categorías. No se necesita configuración."
+                },
+                "search": {
+                    "heading": "¿Cuál es tu pregunta?",
+                    "placeholder": "Buscar...",
+                    "noResults": "No se encontraron FAQ"
+                },
+                "categories": "Temas",
+                "uncategorized": "Sin categoría"
+            }
+        }
+    }
+}

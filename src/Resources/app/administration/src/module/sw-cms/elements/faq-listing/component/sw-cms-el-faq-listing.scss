@@ -1,0 +1,16 @@
+.sw-cms-el-faq-listing {
+    &__placeholder {
+        min-height: 12.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f8f9fa;
+        border: 1px dashed #dee2e6;
+        border-radius: .25rem;
+
+        &__placeholder-content {
+            text-align: center;
+            color: #6c757d;
+        }
+    }
+}

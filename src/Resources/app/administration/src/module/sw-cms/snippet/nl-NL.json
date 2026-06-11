@@ -1,0 +1,60 @@
+{
+    "sw-cms": {
+        "blocks": {
+            "erma": {
+                "label": "Erma",
+                "faq": {
+                    "label": "FAQ"
+                },
+                "faqListing": {
+                    "label": "FAQ-lijst"
+                }
+            }
+        },
+        "elements": {
+            "faq": {
+                "label": "FAQ",
+                "component": {
+                    "emptyState": "Selecteer FAQ's uit de database of voeg handmatige items toe in het instellingenpaneel. Er wordt niets in de winkel getoond totdat er minstens één FAQ is."
+                },
+                "config": {
+                    "label": {
+                        "titleSection": "Kop",
+                        "title": "FAQ-kop",
+                        "faqs": "FAQ's",
+                        "selectFaqs": "FAQ's selecteren",
+                        "items": "Handmatige FAQ-items",
+                        "item": "FAQ-item",
+                        "question": "Vraag",
+                        "answer": "Antwoord",
+                        "addItem": "FAQ-item toevoegen"
+                    },
+                    "placeholder": {
+                        "title": "Optionele kop boven de FAQ-lijst",
+                        "selectFaqs": "Zoek en selecteer FAQ's...",
+                        "question": "Voer de vraag in",
+                        "answer": "Voer het antwoord in"
+                    }
+                }
+            },
+            "faqListing": {
+                "label": "FAQ-lijst",
+                "placeholder": "Dit element toont alle FAQ's en categorieën uit de database.",
+                "preview": "FAQ-lijst - Toont alle FAQ's gegroepeerd op categorie",
+                "config": {
+                    "label": {
+                        "info": "Informatie"
+                    },
+                    "description": "Dit element toont automatisch alle actieve FAQ's uit de database, gegroepeerd op hun categorieën. Geen configuratie nodig."
+                },
+                "search": {
+                    "heading": "Wat is je vraag?",
+                    "placeholder": "Zoeken...",
+                    "noResults": "Geen FAQ's gevonden"
+                },
+                "categories": "Onderwerpen",
+                "uncategorized": "Niet gecategoriseerd"
+            }
+        }
+    }
+}

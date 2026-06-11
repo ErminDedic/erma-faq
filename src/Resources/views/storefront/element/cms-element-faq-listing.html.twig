@@ -1,0 +1,217 @@
+{% block element_faq_listing %}
+    <div class="cms-element-{{ element.type }}" data-faq-listing="{{ element.id }}">
+        {% set faqs = element.data.faqs ?? null %}
+        {% set categories = element.data.categories ?? null %}
+        
+        {# Group FAQs by category ID to eliminate nested loops #}
+        {% set faqsByCategory = {} %}
+        {% set uncategorizedFaqs = [] %}
+        {% for faq in faqs ?? [] %}
+            {% if faq.faqCategoryId is not empty %}
+                {% set faqsByCategory = faqsByCategory|merge({ (faq.faqCategoryId): (faqsByCategory[faq.faqCategoryId] ?? [])|merge([faq]) }) %}
+            {% else %}
+                {% set uncategorizedFaqs = uncategorizedFaqs|merge([faq]) %}
+            {% endif %}
+        {% endfor %}
+        
+        {% if categories and categories|length > 0 %}
+            <div class="faq-listing">
+                {# Search Section #}
+                <div class="faq-listing-search-section">
+                    <h2 class="faq-listing-search-heading">{{ 'faq.listing.search.heading'|trans|default('What is your question?') }}</h2>
+                    <div class="position-relative">
+                        <input 
+                            type="text" 
+                            class="form-control faq-listing-search-input" 
+                            placeholder="{{ 'faq.listing.search.placeholder'|trans|default('Search...') }}"
+                            autocomplete="off"
+                            data-faq-search-input
+                        />
+                        <div class="position-absolute top-50 end-0 translate-middle-y pe-3 faq-listing-search-icon">
+                            {% sw_icon 'search' %}
+                        </div>
+                        <div class="position-absolute top-100 start-0 end-0 mt-2 faq-listing-search-dropdown" data-faq-search-dropdown>
+                            <div class="faq-listing-search-results" data-faq-search-results></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row g-0 p-3 p-lg-5">
+                    {# Sidebar with category filters #}
+                    <aside class="col-lg-3">
+                        <div class="faq-listing-sidebar">
+                            <div class="faq-listing-sidebar-header">
+                                <h3 class="faq-listing-sidebar-title">{{ 'faq.listing.categories'|trans|default('Topics') }}</h3>
+                                <button class="faq-listing-sidebar-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#faqCategoriesCollapse" aria-expanded="true">
+                                    {% sw_icon 'arrow-medium-down' %}
+                                </button>
+                            </div>
+                            <div class="collapse show" id="faqCategoriesCollapse">
+                                <nav class="faq-listing-category-nav">
+                                {% set firstCategoryId = null %}
+                                {% for category in categories %}
+                                    {% set categoryFaqs = faqsByCategory[category.id] ?? [] %}
+                                    
+                                    {% if categoryFaqs|length > 0 %}
+                                        {% if firstCategoryId is null %}
+                                            {% set firstCategoryId = category.id %}
+                                        {% endif %}
+                                        <label class="faq-listing-category-item{% if loop.first %} active{% endif %}">
+                                            <input 
+                                                type="radio" 
+                                                name="faq-category" 
+                                                value="{{ category.id }}"
+                                                data-category-id="{{ category.id }}"
+                                                class="faq-listing-category-radio"
+                                                {% if loop.first %}checked{% endif %}
+                                            />
+                                            <span class="faq-listing-category-label">
+                                                <span class="faq-listing-category-name">{{ category.translated.name ?: category.name }}</span>
+                                                {% if categoryFaqs|length > 0 %}
+                                                    {% sw_icon 'arrow-medium-down' %}
+                                                {% endif %}
+                                            </span>
+                                        </label>
+                                    {% endif %}
+                                {% endfor %}
+                                
+                                {# Uncategorized button #}
+                                {% if uncategorizedFaqs|length > 0 %}
+                                        {% if firstCategoryId is null %}
+                                            {% set firstCategoryId = 'uncategorized' %}
+                                        {% endif %}
+                                        <label class="faq-listing-category-item{% if firstCategoryId == 'uncategorized' %} active{% endif %}">
+                                            <input 
+                                                type="radio" 
+                                                name="faq-category" 
+                                                value="uncategorized"
+                                                data-category-id="uncategorized"
+                                                class="faq-listing-category-radio"
+                                                {% if firstCategoryId == 'uncategorized' %}checked{% endif %}
+                                            />
+                                            <span class="faq-listing-category-label">
+                                                <span class="faq-listing-category-name">{{ 'faq.listing.uncategorized'|trans|default('Uncategorized') }}</span>
+                                                {% if uncategorizedFaqs|length > 0 %}
+                                                    {% sw_icon 'arrow-medium-down' %}
+                                                {% endif %}
+                                            </span>
+                                        </label>
+                                {% endif %}
+                                </nav>
+                            </div>
+                        </div>
+                    </aside>
+                    
+                    {# Main content with FAQs #}
+                    <main class="col-lg-9 px-3">
+                        <div>
+                            {# Category sections - hidden by default, shown via JavaScript #}
+                            {% for category in categories %}
+                                {% set categoryFaqs = faqsByCategory[category.id] ?? [] %}
+                                
+                                {% if categoryFaqs|length > 0 %}
+                                    <div 
+                                        class="faq-listing-category-section{% if loop.first %} active{% endif %}" 
+                                        data-category-id="{{ category.id }}"
+                                    >
+                                        <h2 class="faq-listing-category-heading">
+                                            {{ category.translated.name ?: category.name }}
+                                        </h2>
+                                        
+                                        <div class="accordion faq-accordion" id="accordionCategory{{ category.id }}">
+                                            {% for faq in categoryFaqs %}
+                                                {% set itemId = 'faq-' ~ category.id ~ '-' ~ loop.index0 %}
+                                                {% set headingId = 'heading' ~ itemId %}
+                                                {% set collapseId = 'collapse' ~ itemId %}
+                                                
+                                                {% set question = faq.translated.question ?: faq.question ?: '' %}
+                                                {% set answer = faq.translated.answer ?: faq.answer ?: '' %}
+                                                
+                                                <div class="accordion-item faq-item">
+                                                    <h4 class="accordion-header" id="{{ headingId }}">
+                                                        <button 
+                                                            class="accordion-button faq-item-button collapsed" 
+                                                            type="button" 
+                                                            data-bs-toggle="collapse" 
+                                                            data-bs-target="#{{ collapseId }}" 
+                                                            aria-expanded="false" 
+                                                            aria-controls="{{ collapseId }}"
+                                                        >
+                                                            {{ question }}
+                                                        </button>
+                                                    </h4>
+                                                    <div 
+                                                        id="{{ collapseId }}" 
+                                                        class="accordion-collapse collapse" 
+                                                        aria-labelledby="{{ headingId }}" 
+                                                        data-bs-parent="#accordionCategory{{ category.id }}"
+                                                    >
+                                                        <div class="accordion-body faq-item-body">
+                                                            {% if answer %}
+                                                                {{ answer|raw }}
+                                                            {% endif %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                            
+                            {# Uncategorized section #}
+                            {% if uncategorizedFaqs|length > 0 %}
+                                    <div 
+                                        class="faq-listing-category-section{% if firstCategoryId == 'uncategorized' %} active{% endif %}" 
+                                        data-category-id="uncategorized"
+                                    >
+                                        <h2 class="faq-listing-category-heading">
+                                            {{ 'faq.listing.uncategorized'|trans|default('Uncategorized') }}
+                                        </h2>
+                                        
+                                        <div class="accordion faq-accordion" id="accordionUncategorized">
+                                            {% for faq in uncategorizedFaqs %}
+                                                {% set itemId = 'faq-uncategorized-' ~ loop.index0 %}
+                                                {% set headingId = 'heading' ~ itemId %}
+                                                {% set collapseId = 'collapse' ~ itemId %}
+                                                
+                                                {% set question = faq.translated.question ?: faq.question ?: '' %}
+                                                {% set answer = faq.translated.answer ?: faq.answer ?: '' %}
+                                                
+                                                <div class="accordion-item faq-accordion-item">
+                                                    <h4 class="accordion-header" id="{{ headingId }}">
+                                                        <button 
+                                                            class="accordion-button faq-accordion-button collapsed" 
+                                                            type="button" 
+                                                            data-bs-toggle="collapse" 
+                                                            data-bs-target="#{{ collapseId }}" 
+                                                            aria-expanded="false" 
+                                                            aria-controls="{{ collapseId }}"
+                                                        >
+                                                            {{ question }}
+                                                        </button>
+                                                    </h4>
+                                                    <div 
+                                                        id="{{ collapseId }}" 
+                                                        class="accordion-collapse collapse" 
+                                                        aria-labelledby="{{ headingId }}" 
+                                                        data-bs-parent="#accordionUncategorized"
+                                                    >
+                                                        <div class="accordion-body faq-accordion-body">
+                                                            {% if answer %}
+                                                                {{ answer|raw }}
+                                                            {% endif %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                            {% endif %}
+                        </div>
+                    </main>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

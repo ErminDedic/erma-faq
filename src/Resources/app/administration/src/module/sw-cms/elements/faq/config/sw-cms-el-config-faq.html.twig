@@ -1,0 +1,127 @@
+{% block sw_cms_el_faq_config %}
+    {% block sw_cms_el_faq_config_content %}
+        {% block sw_cms_el_faq_config_title %}
+            <mt-card
+                class="sw-cms-el-config-faq__title-card"
+                position-identifier="sw-cms-el-config-faq-title"
+                :title="$tc('sw-cms.elements.faq.config.label.titleSection')"
+            >
+                <mt-text-field
+                    :model-value="element.config.title.value"
+                    class="sw-cms-el-config-faq__title-field"
+                    :label="$tc('sw-cms.elements.faq.config.label.title')"
+                    :placeholder="$tc('sw-cms.elements.faq.config.placeholder.title')"
+                    @update:model-value="onTitleChange"
+                />
+            </mt-card>
+        {% endblock %}
+
+        {% block sw_cms_el_faq_config_faqs_selection %}
+            <mt-card
+                class="sw-cms-el-config-faq__faqs-card"
+                position-identifier="sw-cms-el-config-faq-faqs"
+                :title="$tc('sw-cms.elements.faq.config.label.faqs')"
+            >
+                <sw-entity-multi-select
+                    entity="faq"
+                    :label="$tc('sw-cms.elements.faq.config.label.selectFaqs')"
+                    :placeholder="$tc('sw-cms.elements.faq.config.placeholder.selectFaqs')"
+                    :criteria="faqCriteria"
+                    v-model:entityCollection="selectedFaqsCollection"
+                    @update:entityCollection="onFaqsChange"
+                >
+                    <template #selection-label-property="{ item }">
+                        {{ item.translated?.question || item.question || '-' }}
+                    </template>
+                    <template #result-item="{ item, index }">
+                        <sw-select-result
+                            v-bind="{ item, index }"
+                        >
+                            <span class="sw-select-result__result-item-text">
+                                {{ item.translated?.question || item.question || '-' }}
+                            </span>
+                        </sw-select-result>
+                    </template>
+                </sw-entity-multi-select>
+            </mt-card>
+        {% endblock %}
+
+        {% block sw_cms_el_faq_config_items_card %}
+            <mt-card
+                class="sw-cms-el-config-faq__items-card"
+                position-identifier="sw-cms-el-config-faq-items"
+                :title="$tc('sw-cms.elements.faq.config.label.items')"
+            >
+            {% block sw_cms_el_faq_config_items_list %}
+                <div class="sw-cms-el-config-faq__items-list">
+                    {% block sw_cms_el_faq_config_items_item %}
+                        <div
+                            v-for="(item, index) in faqItems"
+                            :key="index"
+                            class="sw-cms-el-config-faq__item"
+                        >
+                            {% block sw_cms_el_faq_config_items_header %}
+                                <div class="sw-cms-el-config-faq__item-header">
+                                    <h4>{{ $tc('sw-cms.elements.faq.config.label.item') }} {{ index + 1 }}</h4>
+                                    <mt-button
+                                        variant="critical"
+                                        size="small"
+                                        @click="onRemoveFaqItem(index)"
+                                    >
+                                        <mt-icon
+                                            name="regular-trash"
+                                            size="16px"
+                                        />
+                                    </mt-button>
+                                </div>
+                            {% endblock %}
+
+                            {% block sw_cms_el_faq_config_items_question %}
+                                <mt-text-field
+                                    v-model="item.question"
+                                    class="sw-cms-el-config-faq__item-question"
+                                    :label="$tc('sw-cms.elements.faq.config.label.question')"
+                                    :placeholder="$tc('sw-cms.elements.faq.config.placeholder.question')"
+                                    @update:model-value="$emit('element-update', element)"
+                                />
+                            {% endblock %}
+
+                            {% block sw_cms_el_faq_config_items_answer %}
+                                <sw-container
+                                    class="sw-cms-el-config-faq__item-answer"
+                                >
+                                    <sw-text-editor
+                                        v-if="!feature.isActive('METEOR_TEXT_EDITOR')"
+                                        :value="item.answer"
+                                        :sanitize-info-warn="true"
+                                        enable-transparent-background
+                                        @update:value="onAnswerInput(item, $event)"
+                                        @blur="onAnswerBlur"
+                                    />
+
+                                    <mt-text-editor
+                                        v-else
+                                        :model-value="item.answer"
+                                        :custom-buttons="customTextEditorButtons"
+                                        @update:model-value="onAnswerInput(item, $event)"
+                                    />
+                                </sw-container>
+                            {% endblock %}
+                        </div>
+                    {% endblock %}
+
+                    {% block sw_cms_el_faq_config_add_item_button %}
+                        <mt-button
+                            class="sw-cms-el-config-faq__add-item-button"
+                            variant="primary"
+                            @click="onAddFaqItem"
+                        >
+                            {{ $tc('sw-cms.elements.faq.config.label.addItem') }}
+                        </mt-button>
+                    {% endblock %}
+                </div>
+            {% endblock %}
+        </mt-card>
+        {% endblock %}
+    {% endblock %}
+{% endblock %}

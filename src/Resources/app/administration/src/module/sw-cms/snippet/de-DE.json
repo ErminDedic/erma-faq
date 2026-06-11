@@ -1,0 +1,60 @@
+{
+    "sw-cms": {
+        "blocks": {
+            "erma": {
+                "label": "Erma",
+                "faq": {
+                    "label": "FAQ"
+                },
+                "faqListing": {
+                    "label": "FAQ-Liste"
+                }
+            }
+        },
+        "elements": {
+            "faq": {
+                "label": "FAQ",
+                "component": {
+                    "emptyState": "Wählen Sie FAQs aus der Datenbank oder fügen Sie manuelle Einträge im Einstellungsbereich hinzu. Im Shopfront wird nichts angezeigt, bis mindestens eine FAQ vorhanden ist."
+                },
+                "config": {
+                    "label": {
+                        "titleSection": "Überschrift",
+                        "title": "FAQ-Überschrift",
+                        "faqs": "FAQs",
+                        "selectFaqs": "FAQs auswählen",
+                        "items": "Manuelle FAQ-Einträge",
+                        "item": "FAQ-Eintrag",
+                        "question": "Frage",
+                        "answer": "Antwort",
+                        "addItem": "FAQ-Eintrag hinzufügen"
+                    },
+                    "placeholder": {
+                        "title": "Optionale Überschrift über der FAQ-Liste",
+                        "selectFaqs": "FAQs suchen und auswählen...",
+                        "question": "Geben Sie die Frage ein",
+                        "answer": "Geben Sie die Antwort ein"
+                    }
+                }
+            },
+            "faqListing": {
+                "label": "FAQ-Liste",
+                "placeholder": "Dieses Element zeigt alle FAQs und Kategorien aus der Datenbank an.",
+                "preview": "FAQ-Liste - Zeigt alle FAQs gruppiert nach Kategorien",
+                "config": {
+                    "label": {
+                        "info": "Information"
+                    },
+                    "description": "Dieses Element zeigt automatisch alle aktiven FAQs aus der Datenbank an, gruppiert nach ihren Kategorien. Keine Konfiguration erforderlich."
+                },
+                "search": {
+                    "heading": "Was ist Ihre Frage?",
+                    "placeholder": "Suchen...",
+                    "noResults": "Keine FAQs gefunden"
+                },
+                "categories": "Themen",
+                "uncategorized": "Nicht kategorisiert"
+            }
+        }
+    }
+}

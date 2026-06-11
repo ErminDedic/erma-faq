@@ -1,0 +1,50 @@
+{% block sw_cms_element_faq %}
+<div class="sw-cms-el-faq">
+    {% block sw_cms_element_faq_title %}
+        <h2
+            v-if="element.config.title && element.config.title.value"
+            class="sw-cms-el-faq__title"
+        >
+            {{ element.config.title.value }}
+        </h2>
+    {% endblock %}
+
+    {% block sw_cms_element_faq_empty %}
+        <div
+            v-if="!hasAnyFaqs"
+            class="sw-cms-el-faq__empty"
+        >
+            <p class="sw-cms-el-faq__empty-text">
+                {{ $tc('sw-cms.elements.faq.component.emptyState') }}
+            </p>
+        </div>
+    {% endblock %}
+
+    {% block sw_cms_element_faq_items %}
+        <div
+            v-else
+            class="sw-cms-el-faq__items"
+        >
+            <div
+                v-for="item in displayFaqItems"
+                :key="item.key"
+                class="sw-cms-el-faq__item"
+            >
+                {% block sw_cms_element_faq_item_question %}
+                    <h3 class="sw-cms-el-faq__item-question">
+                        {{ item.question }}
+                    </h3>
+                {% endblock %}
+
+                {% block sw_cms_element_faq_item_answer %}
+                    <div
+                        v-if="item.answer"
+                        class="sw-cms-el-faq__item-answer"
+                        v-html="$sanitize(item.answer)"
+                    ></div>
+                {% endblock %}
+            </div>
+        </div>
+    {% endblock %}
+</div>
+{% endblock %}

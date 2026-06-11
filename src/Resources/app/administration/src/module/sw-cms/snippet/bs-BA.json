@@ -1,0 +1,60 @@
+{
+    "sw-cms": {
+        "blocks": {
+            "erma": {
+                "label": "Erma",
+                "faq": {
+                    "label": "FAQ"
+                },
+                "faqListing": {
+                    "label": "FAQ lista"
+                }
+            }
+        },
+        "elements": {
+            "faq": {
+                "label": "FAQ",
+                "component": {
+                    "emptyState": "Odaberite FAQ iz baze podataka ili dodajte ručne unose u panelu postavki. Ništa se ne prikazuje u prodavnici dok ne dodate barem jedan."
+                },
+                "config": {
+                    "label": {
+                        "titleSection": "Naslov",
+                        "title": "FAQ naslov",
+                        "faqs": "FAQ",
+                        "selectFaqs": "Odaberi FAQ",
+                        "items": "Ručni FAQ unosi",
+                        "item": "FAQ stavka",
+                        "question": "Pitanje",
+                        "answer": "Odgovor",
+                        "addItem": "Dodaj FAQ stavku"
+                    },
+                    "placeholder": {
+                        "title": "Opcioni naslov iznad FAQ liste",
+                        "selectFaqs": "Pretraži i odaberi FAQ...",
+                        "question": "Unesite pitanje",
+                        "answer": "Unesite odgovor"
+                    }
+                }
+            },
+            "faqListing": {
+                "label": "FAQ lista",
+                "placeholder": "Ovaj element prikazuje sve FAQ i kategorije iz baze podataka.",
+                "preview": "FAQ lista - Prikazuje sve FAQ grupisane po kategorijama",
+                "config": {
+                    "label": {
+                        "info": "Informacije"
+                    },
+                    "description": "Ovaj element automatski prikazuje sve aktivne FAQ iz baze podataka, grupisane po kategorijama. Nije potrebna konfiguracija."
+                },
+                "search": {
+                    "heading": "Koje je vaše pitanje?",
+                    "placeholder": "Pretraži...",
+                    "noResults": "Nema pronađenih FAQ-ova"
+                },
+                "categories": "Teme",
+                "uncategorized": "Nekategorisano"
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "faq": {
+        "listing": {
+            "search": {
+                "heading": "Wat is je vraag?",
+                "placeholder": "Zoeken..."
+            },
+            "categories": "Onderwerpen",
+            "uncategorized": "Niet gecategoriseerd"
+        }
+    }
+}

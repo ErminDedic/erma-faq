@@ -1,0 +1,60 @@
+{
+    "sw-cms": {
+        "blocks": {
+            "erma": {
+                "label": "Erma",
+                "faq": {
+                    "label": "FAQ"
+                },
+                "faqListing": {
+                    "label": "FAQ-liste"
+                }
+            }
+        },
+        "elements": {
+            "faq": {
+                "label": "FAQ",
+                "component": {
+                    "emptyState": "Vælg FAQ'er fra databasen, eller tilføj manuelle poster i indstillingspanelet. Intet vises i butikken, før du har tilføjet mindst én."
+                },
+                "config": {
+                    "label": {
+                        "titleSection": "Overskrift",
+                        "title": "FAQ-overskrift",
+                        "faqs": "FAQ'er",
+                        "selectFaqs": "Vælg FAQ'er",
+                        "items": "Manuelle FAQ-poster",
+                        "item": "FAQ-post",
+                        "question": "Spørgsmål",
+                        "answer": "Svar",
+                        "addItem": "Tilføj FAQ-post"
+                    },
+                    "placeholder": {
+                        "title": "Valgfri overskrift over FAQ-listen",
+                        "selectFaqs": "Søg og vælg FAQ'er...",
+                        "question": "Indtast spørgsmålet",
+                        "answer": "Indtast svaret"
+                    }
+                }
+            },
+            "faqListing": {
+                "label": "FAQ-liste",
+                "placeholder": "Dette element viser alle FAQ'er og kategorier fra databasen.",
+                "preview": "FAQ-liste - Viser alle FAQ'er grupperet efter kategorier",
+                "config": {
+                    "label": {
+                        "info": "Information"
+                    },
+                    "description": "Dette element viser automatisk alle aktive FAQ'er fra databasen, grupperet efter deres kategorier. Ingen konfiguration er nødvendig."
+                },
+                "search": {
+                    "heading": "Hvad er dit spørgsmål?",
+                    "placeholder": "Søg...",
+                    "noResults": "Ingen FAQ'er fundet"
+                },
+                "categories": "Emner",
+                "uncategorized": "Ukategoriseret"
+            }
+        }
+    }
+}

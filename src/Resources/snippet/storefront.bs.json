@@ -1,0 +1,12 @@
+{
+    "faq": {
+        "listing": {
+            "search": {
+                "heading": "Koje je vaše pitanje?",
+                "placeholder": "Pretraži..."
+            },
+            "categories": "Teme",
+            "uncategorized": "Nekategorisano"
+        }
+    }
+}

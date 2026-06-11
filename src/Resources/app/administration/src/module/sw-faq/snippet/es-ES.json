@@ -1,0 +1,78 @@
+{
+    "sw-faq": {
+        "general": {
+            "mainMenuItemGeneral": "Gestión de FAQ",
+            "descriptionText": "Gestiona las preguntas frecuentes y las categorías"
+        },
+        "list": {
+            "title": "FAQ",
+            "tabFaqs": "FAQ",
+            "tabCategories": "Categorías",
+            "buttonAddFaq": "Añadir FAQ",
+            "searchPlaceholder": "Buscar FAQ...",
+            "columnQuestion": "Pregunta",
+            "columnAnswer": "Respuesta",
+            "columnCategory": "Categoría",
+            "columnActive": "Activo",
+            "actionEdit": "Editar",
+            "actionDelete": "Eliminar",
+            "emptyStateTitle": "No se encontraron FAQ",
+            "emptyStateSubline": "Crea tu primera FAQ para empezar",
+            "modalDeleteTitle": "Eliminar FAQ",
+            "modalDeleteText": "¿Estás seguro de que quieres eliminar esta FAQ?",
+            "buttonCancel": "Cancelar",
+            "buttonDelete": "Eliminar",
+            "notificationDeleteSuccess": "La FAQ se ha eliminado correctamente",
+            "notificationDeleteError": "Se produjo un error al eliminar la FAQ",
+            "textFaqOverview": "FAQ"
+        },
+        "detail": {
+            "titleNew": "Nueva FAQ",
+            "textHeadline": "FAQ",
+            "cardTitleFaqInfo": "Información de la FAQ",
+            "buttonCancel": "Cancelar",
+            "buttonSave": "Guardar",
+            "labelQuestion": "Pregunta",
+            "placeholderQuestion": "Introduce la pregunta",
+            "labelAnswer": "Respuesta",
+            "placeholderAnswer": "Introduce la respuesta",
+            "labelCategory": "Categoría",
+            "placeholderCategory": "Selecciona una categoría",
+            "labelActive": "Activo",
+            "notificationSaveSuccess": "La FAQ se ha guardado correctamente",
+            "notificationSaveError": "Se produjo un error al guardar la FAQ",
+            "notificationLoadError": "Se produjo un error al cargar la FAQ"
+        },
+        "category": {
+            "list": {
+                "title": "Categorías de FAQ",
+                "textCategoryOverview": "Categorías",
+                "buttonAddCategory": "Añadir categoría",
+                "searchPlaceholder": "Buscar categorías...",
+                "columnName": "Nombre",
+                "actionEdit": "Editar",
+                "actionDelete": "Eliminar",
+                "emptyStateTitle": "No se encontraron categorías",
+                "emptyStateSubline": "Crea tu primera categoría para empezar",
+                "modalDeleteTitle": "Eliminar categoría",
+                "modalDeleteText": "¿Estás seguro de que quieres eliminar esta categoría?",
+                "buttonCancel": "Cancelar",
+                "buttonDelete": "Eliminar",
+                "notificationDeleteSuccess": "La categoría se ha eliminado correctamente",
+                "notificationDeleteError": "Se produjo un error al eliminar la categoría"
+            },
+            "detail": {
+                "titleNew": "Nueva categoría",
+                "textHeadline": "Categoría",
+                "cardTitleCategoryInfo": "Información de la categoría",
+                "buttonCancel": "Cancelar",
+                "buttonSave": "Guardar",
+                "labelName": "Nombre",
+                "placeholderName": "Introduce el nombre de la categoría",
+                "notificationSaveSuccess": "La categoría se ha guardado correctamente",
+                "notificationSaveError": "Se produjo un error al guardar la categoría",
+                "notificationLoadError": "Se produjo un error al cargar la categoría"
+            }
+        }
+    }
+}

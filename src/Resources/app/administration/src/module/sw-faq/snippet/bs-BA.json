@@ -1,0 +1,78 @@
+{
+    "sw-faq": {
+        "general": {
+            "mainMenuItemGeneral": "Upravljanje FAQ-om",
+            "descriptionText": "Upravljajte često postavljanim pitanjima i kategorijama"
+        },
+        "list": {
+            "title": "FAQ",
+            "tabFaqs": "FAQ",
+            "tabCategories": "Kategorije",
+            "buttonAddFaq": "Dodaj FAQ",
+            "searchPlaceholder": "Pretraži FAQ...",
+            "columnQuestion": "Pitanje",
+            "columnAnswer": "Odgovor",
+            "columnCategory": "Kategorija",
+            "columnActive": "Aktivno",
+            "actionEdit": "Uredi",
+            "actionDelete": "Obriši",
+            "emptyStateTitle": "Nema pronađenih FAQ-ova",
+            "emptyStateSubline": "Kreirajte svoj prvi FAQ da biste započeli",
+            "modalDeleteTitle": "Obriši FAQ",
+            "modalDeleteText": "Jeste li sigurni da želite obrisati ovaj FAQ?",
+            "buttonCancel": "Otkaži",
+            "buttonDelete": "Obriši",
+            "notificationDeleteSuccess": "FAQ je uspješno obrisan",
+            "notificationDeleteError": "Došlo je do greške prilikom brisanja FAQ-a",
+            "textFaqOverview": "FAQ"
+        },
+        "detail": {
+            "titleNew": "Novi FAQ",
+            "textHeadline": "FAQ",
+            "cardTitleFaqInfo": "Informacije o FAQ-u",
+            "buttonCancel": "Otkaži",
+            "buttonSave": "Sačuvaj",
+            "labelQuestion": "Pitanje",
+            "placeholderQuestion": "Unesite pitanje",
+            "labelAnswer": "Odgovor",
+            "placeholderAnswer": "Unesite odgovor",
+            "labelCategory": "Kategorija",
+            "placeholderCategory": "Odaberite kategoriju",
+            "labelActive": "Aktivno",
+            "notificationSaveSuccess": "FAQ je uspješno sačuvan",
+            "notificationSaveError": "Došlo je do greške prilikom čuvanja FAQ-a",
+            "notificationLoadError": "Došlo je do greške prilikom učitavanja FAQ-a"
+        },
+        "category": {
+            "list": {
+                "title": "FAQ kategorije",
+                "textCategoryOverview": "Kategorije",
+                "buttonAddCategory": "Dodaj kategoriju",
+                "searchPlaceholder": "Pretraži kategorije...",
+                "columnName": "Naziv",
+                "actionEdit": "Uredi",
+                "actionDelete": "Obriši",
+                "emptyStateTitle": "Nema pronađenih kategorija",
+                "emptyStateSubline": "Kreirajte svoju prvu kategoriju da biste započeli",
+                "modalDeleteTitle": "Obriši kategoriju",
+                "modalDeleteText": "Jeste li sigurni da želite obrisati ovu kategoriju?",
+                "buttonCancel": "Otkaži",
+                "buttonDelete": "Obriši",
+                "notificationDeleteSuccess": "Kategorija je uspješno obrisana",
+                "notificationDeleteError": "Došlo je do greške prilikom brisanja kategorije"
+            },
+            "detail": {
+                "titleNew": "Nova kategorija",
+                "textHeadline": "Kategorija",
+                "cardTitleCategoryInfo": "Informacije o kategoriji",
+                "buttonCancel": "Otkaži",
+                "buttonSave": "Sačuvaj",
+                "labelName": "Naziv",
+                "placeholderName": "Unesite naziv kategorije",
+                "notificationSaveSuccess": "Kategorija je uspješno sačuvana",
+                "notificationSaveError": "Došlo je do greške prilikom čuvanja kategorije",
+                "notificationLoadError": "Došlo je do greške prilikom učitavanja kategorije"
+            }
+        }
+    }
+}

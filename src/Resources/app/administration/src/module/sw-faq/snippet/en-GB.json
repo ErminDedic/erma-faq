@@ -1,0 +1,78 @@
+{
+    "sw-faq": {
+        "general": {
+            "mainMenuItemGeneral": "FAQ Management",
+            "descriptionText": "Manage frequently asked questions and categories"
+        },
+        "list": {
+            "title": "FAQs",
+            "tabFaqs": "FAQs",
+            "tabCategories": "Categories",
+            "buttonAddFaq": "Add FAQ",
+            "searchPlaceholder": "Search FAQs...",
+            "columnQuestion": "Question",
+            "columnAnswer": "Answer",
+            "columnCategory": "Category",
+            "columnActive": "Active",
+            "actionEdit": "Edit",
+            "actionDelete": "Delete",
+            "emptyStateTitle": "No FAQs found",
+            "emptyStateSubline": "Create your first FAQ to get started",
+            "modalDeleteTitle": "Delete FAQ",
+            "modalDeleteText": "Are you sure you want to delete this FAQ?",
+            "buttonCancel": "Cancel",
+            "buttonDelete": "Delete",
+            "notificationDeleteSuccess": "FAQ has been deleted successfully",
+            "notificationDeleteError": "An error occurred while deleting the FAQ",
+            "textFaqOverview": "FAQs"
+        },
+        "detail": {
+            "titleNew": "New FAQ",
+            "textHeadline": "FAQ",
+            "cardTitleFaqInfo": "FAQ Information",
+            "buttonCancel": "Cancel",
+            "buttonSave": "Save",
+            "labelQuestion": "Question",
+            "placeholderQuestion": "Enter the question",
+            "labelAnswer": "Answer",
+            "placeholderAnswer": "Enter the answer",
+            "labelCategory": "Category",
+            "placeholderCategory": "Select a category",
+            "labelActive": "Active",
+            "notificationSaveSuccess": "FAQ has been saved successfully",
+            "notificationSaveError": "An error occurred while saving the FAQ",
+            "notificationLoadError": "An error occurred while loading the FAQ"
+        },
+        "category": {
+            "list": {
+                "title": "FAQ Categories",
+                "textCategoryOverview": "Categories",
+                "buttonAddCategory": "Add Category",
+                "searchPlaceholder": "Search categories...",
+                "columnName": "Name",
+                "actionEdit": "Edit",
+                "actionDelete": "Delete",
+                "emptyStateTitle": "No categories found",
+                "emptyStateSubline": "Create your first category to get started",
+                "modalDeleteTitle": "Delete Category",
+                "modalDeleteText": "Are you sure you want to delete this category?",
+                "buttonCancel": "Cancel",
+                "buttonDelete": "Delete",
+                "notificationDeleteSuccess": "Category has been deleted successfully",
+                "notificationDeleteError": "An error occurred while deleting the category"
+            },
+            "detail": {
+                "titleNew": "New Category",
+                "textHeadline": "Category",
+                "cardTitleCategoryInfo": "Category Information",
+                "buttonCancel": "Cancel",
+                "buttonSave": "Save",
+                "labelName": "Name",
+                "placeholderName": "Enter the category name",
+                "notificationSaveSuccess": "Category has been saved successfully",
+                "notificationSaveError": "An error occurred while saving the category",
+                "notificationLoadError": "An error occurred while loading the category"
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "erma/faq",
+  "description": "ErmaFaq",
+  "version": "v1.0.0",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Erma"
+    }
+  ],
+  "require": {
+    "shopware/core": ">=6.7",
+    "php": ">=8"
+  },
+  "type": "shopware-platform-plugin",
+  "extra": {
+    "shopware-plugin-class": "Erma\\Faq\\ErmaFaq",
+    "label": {
+      "de-DE": "ErmaFaq",
+      "en-GB": "ErmaFaq"
+    },
+    "description": {
+      "de-DE": "ErmaFaq",
+      "en-GB": "ErmaFaq"
+    },
+    "copyright": "(c) Erma",
+    "plugin-icon": "src/Resources/assets/plugin.png"
+  },
+  "autoload": {
+    "psr-4": {
+      "Erma\\Faq\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Erma\\Faq\\Tests\\": "tests"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "symfony/runtime": true
+    }
+  }
+}

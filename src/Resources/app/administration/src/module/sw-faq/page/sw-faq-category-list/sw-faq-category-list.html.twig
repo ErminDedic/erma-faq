@@ -1,0 +1,114 @@
+{% block sw_faq_category_list %}
+    <sw-page class="sw-faq-category-list">
+        {% block sw_faq_category_list_search_bar %}
+            <template #search-bar>
+                <sw-search-bar
+                    initial-search-type="faq_category"
+                    :initial-search="term"
+                    @search="onSearch"
+                />
+            </template>
+        {% endblock %}
+
+        {% block sw_faq_category_list_smart_bar_header %}
+            <template #smart-bar-header>
+                {% block sw_faq_category_list_smart_bar_header_title %}
+                    <h2>
+                        {% block sw_faq_category_list_smart_bar_header_text %}
+                            {{ $tc('sw-faq.category.list.textCategoryOverview') }}
+                        {% endblock %}
+
+                        {% block sw_faq_category_list_smart_bar_header_amount %}
+                            <span
+                                v-if="!isLoading"
+                                class="sw-page__smart-bar-amount"
+                            >
+                                ({{ total }})
+                            </span>
+                        {% endblock %}
+                    </h2>
+                {% endblock %}
+            </template>
+        {% endblock %}
+
+        {% block sw_faq_category_list_actions %}
+            <template #smart-bar-actions>
+                {% block sw_faq_category_list_smart_bar_actions %}
+                    <mt-button
+                        class="sw-faq-category-list__add-category"
+                        variant="primary"
+                        size="default"
+                        @click="$router.push({ name: 'sw.faq.categoryCreate' })"
+                    >
+                        {{ $tc('sw-faq.category.list.buttonAddCategory') }}
+                    </mt-button>
+                {% endblock %}
+            </template>
+        {% endblock %}
+
+        {% block sw_faq_category_list_language_switch %}
+            <template #language-switch>
+                <sw-language-switch @on-change="onChangeLanguage" />
+            </template>
+        {% endblock %}
+
+        <template #content>
+            {% block sw_faq_category_list_content %}
+                <div class="sw-faq-category-list__content">
+                    {% block sw_faq_category_list_tabs %}
+                        <sw-tabs>
+                            <sw-tabs-item
+                                :route="{ name: 'sw.faq.index' }"
+                                :title="$tc('sw-faq.list.tabFaqs')"
+                            >
+                                {{ $tc('sw-faq.list.tabFaqs') }}
+                            </sw-tabs-item>
+                            <sw-tabs-item
+                                :route="{ name: 'sw.faq.categoryList' }"
+                                :title="$tc('sw-faq.list.tabCategories')"
+                            >
+                                {{ $tc('sw-faq.list.tabCategories') }}
+                            </sw-tabs-item>
+                        </sw-tabs>
+                    {% endblock %}
+
+                    {% block sw_faq_category_list_empty_state %}
+                        <mt-empty-state
+                            v-if="!isLoading && !total"
+                            class="mt-empty-state--center"
+                            :icon="$route.meta.$module.icon"
+                            :headline="isValidTerm(term) ? $t('sw-empty-state.messageNoResultTitle') : $t('sw-empty-state.messageNoResultTitle')"
+                            :description="isValidTerm(term) ? $t('sw-empty-state.messageNoResultSubline') : $t($route.meta.$module.description)"
+                            :link-text="isValidTerm(term) ? $t('sw-empty-state.messageNoResultLink') : ''"
+                            :link-href="isValidTerm(term) ? $router.resolve({ name: 'sw.profile.index.searchPreferences' }).href : ''"
+                        />
+                    {% endblock %}
+
+                    {% block sw_faq_category_list_grid %}
+                        <sw-entity-listing
+                            v-else-if="entitySearchable"
+                            class="sw-faq-category-list__grid"
+                            detail-route="sw.faq.categoryDetail"
+                            :is-loading="isLoading"
+                            :columns="categoryColumns"
+                            :repository="faqCategoryRepository"
+                            :items="categories"
+                            :criteria-limit="limit"
+                            :sort-by="currentSortBy"
+                            :sort-direction="sortDirection"
+                            :disable-data-fetching="true"
+                            :allow-edit="true"
+                            :allow-inline-edit="true"
+                            :allow-delete="true"
+                            :show-selections="true"
+                            identifier="sw-faq-category-list"
+                            @update-records="updateTotal"
+                            @page-change="onPageChange"
+                            @column-sort="onSortColumn"
+                        />
+                    {% endblock %}
+                </div>
+            {% endblock %}
+        </template>
+    </sw-page>
+{% endblock %}
