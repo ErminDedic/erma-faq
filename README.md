@@ -38,7 +38,7 @@ From there you can:
 - **Manage FAQs** — create, edit, search, and delete FAQ entries
 - **Manage categories** — organize FAQs into categories
 - **Control visibility** — toggle each FAQ as active or inactive
-- **Translate content** — question and answer fields are translatable per sales channel language
+- **Translate content** — question and answer fields are translatable per shopgit language
 
 A typical workflow:
 
